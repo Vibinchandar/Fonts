@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color variable</title>
+</head>
+<body>
+  <div class="container">
+    <div class="contentbox">
+      <input class="text" id="text" placeholder="Type something"/>
+      <div id="display-text"></div>
+      <button id="show">output</button>
+      <button class="Primary" id="Primary">h1</button>
+      <button class="Secondary" id="Secondary">h2</button>      
+      <button id="font1">Font 1</button>
+      <button id="font2">Font 2</button>
+      
+    </div>
+  </div>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik+Glitch&display=swap');
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        background-color: beige;        
+    }
+    .contentbox{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-items: center;
+      gap: 1rem;
+    }    
+    </style>
+
+  <script>
+
+    let word = document.getElementById("text");
+    let primary = document.getElementById("Primary");
+    let secondary = document.getElementById("Secondary");
+    let font1 = document.getElementById("font1");
+    let font2 = document.getElementById("font2");    
+    let output = document.getElementById("show");
+    let display = document.getElementById("display-text");
+
+    //ouput
+    output.addEventListener('click', showOutput)
+    function showOutput(){    
+    display.innerText = word.value
+    }
+
+    //Primary size color
+    primary.addEventListener("click", prim);
+    function prim() {
+      display.style.fontSize = "70px";
+      display.style.color= "red";      
+    }
+    
+    //secondary size color
+    secondary.addEventListener("click", sec);
+    function sec() {
+      display.style.fontSize = "40px";
+      display.style.color= "green";                  
+    }
+    // font 'Roboto', sans-serif
+    font1.addEventListener("click", robo);
+    function robo() {      
+      display.style.fontFamily = 'Roboto', sans-serif;
+    }
+    
+    //Font 'Rubik Glitch', cursive 
+    font2.addEventListener("click", rub);
+    function rub() {
+      display.style.fontFamily = 'Rubik Glitch', cursive ;
+    }    
+
+  </script>
+</body>
+</html>
